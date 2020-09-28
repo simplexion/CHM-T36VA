@@ -1,0 +1,33 @@
+separated
+FILE,{{header.file}}
+PCBFILE,{{header.pcbfile}}
+DATE,{{header.date}}
+TIME,{{header.time}}
+PANELYPE,{{header.paneltype}}
+
+Table,No.,ID,DeltX,DeltY,FeedRates,Note,Height,Speed,Status,SizeX,SizeY,HeightTake,DelayTake
+{% for s in stations -%}
+Station,{{loop.index0}},{{s.id}},{{s.delt_x}},{{s.delt_y}},{{s.feed_rates}},{{s.note}},{{s.height}},{{s.speed}},{{s.status}},{{s.size_x}},{{s.size_y}},{{s.height_take}},{{s.delay_take}}
+{% endfor %}
+Table,No.,ID,DeltX,DeltY
+Panel_Coord,0,1,0,0
+
+Table,No.,ID,PHead,STNo.,DeltX,DeltY,Angle,Height,Skip,Speed,Explain,Note,Delay
+{% for c in ecomponents -%}
+EComponent,{{loop.index0}},{{loop.index}},{{c.p_head}},{{c.s_t_no}},{{c.delt_x}},{{c.delt_y}},{{c.angle}},{{c.height}},{{c.skip}},{{c.speed}},{{c.explain}},{{c.note}},{{c.delay}}
+{% endfor %}
+Table,No.,ID,CenterX,CenterY,IntervalX,IntervalY,NumX,NumY,Start
+{% for i in ic_tray -%}
+ICTray,{{loop.index0}},{{i.id}},{{i.center_x}},{{i.center_y}},{{i.interval_x}},{{i.interval_y}},{{i.num_x}},{{i.num_y}},{{i.start}}
+{% endfor %}
+Table,No.,nType,nAlg,nFinished
+PcbCalib,0,{% if calib_points|length >= 2 %}1{% else %}0{% endif %},0,0
+
+Table,No.,ID,offsetX,offsetY,Note
+{% if calib_points|length >= 2 -%}
+{% for i in range([calib_points|length, 3]|max) -%}
+CalibPoint,{{loop.index0}},0,{{calib_points[i].offset_x}},{{calib_points[i].offset_y}},Mark{{loop.index}}
+{% endfor %}
+{%- endif %}
+Table,No.,DeltX,DeltY,AlphaX,AlphaY,BetaX,BetaY,DeltaAngle
+CalibFator,0,0,0,0,0,1,1,0

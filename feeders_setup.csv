@@ -28,8 +28,3 @@ Tape Size,Feeder Index,Component,XOffset,YOffset,Height,Speed,Head,Relative Tape
 16mm,27,,0,0,0.5,0,1,0,0,Y,Y,Y,0,0,,
 16mm,28,,0,0,0.5,0,1,0,0,Y,Y,Y,0,0,,
 24mm,29,,0,0,0.5,0,1,0,0,Y,Y,Y,0,0,,
-NoMount,NoMount,No Mount,,,,,,,,N,,,,,Fiducial_1mm_Dia_2mm_Outer-Fiducial_1mm_Dia_2mm_Outer:Fiducial_0.5mm_Dia_1mm_Outer:Fiducial_0.5mm_Mask1mm,
-Stop,Stop,Stop,,,,,,,,,,,,,,
-,,,,Below are known values for reels that are used periodically,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-8mm,1,Blank,0,0,0.5,0,1,0,0,Y,Y,Y,,,,
