@@ -26,7 +26,7 @@ PcbCalib,0,{% if calib_points|length >= 2 %}1{% else %}0{% endif %},0,0
 Table,No.,ID,offsetX,offsetY,Note
 {% if calib_points|length >= 2 -%}
 {% for i in range([calib_points|length, 3]|max) -%}
-CalibPoint,{{loop.index0}},0,{{calib_points[i].offset_x}},{{calib_points[i].offset_y}},Mark{{loop.index}}
+CalibPoint,{{loop.index0}},0,{{calib_points[i].offset_x}},{{calib_points[i].offset_y}},{{calib_points[i].note}}
 {% endfor %}
 {%- endif %}
 Table,No.,DeltX,DeltY,AlphaX,AlphaY,BetaX,BetaY,DeltaAngle
