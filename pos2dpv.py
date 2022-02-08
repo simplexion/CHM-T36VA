@@ -82,7 +82,7 @@ def main(args):
     feeders = [feeder for feeder in feeders if feeder["Component"]]
     # assign each component to a feeder in a placement
     for component in components:
-        if component["Ref"].startswith("FID"):
+        if component["Ref"].startswith("FID") or str(component["Val"]).startswith("Fiducial"):
             fiducials += [component]
         else:
             feeder = find_feeder(feeders, component)
